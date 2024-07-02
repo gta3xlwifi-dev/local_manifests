@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- FORKS -->
+  <!-- Contains a patch for a possible slight improvement in screen recording quality,
+       and patches for camera HAL v1 support restoration.
+       REQUIRED for the camera HAL v1 patches, but the former patch can be reverted if not desired. -->
+  <remove-project name="aosp/android_frameworks_base" />
+  <project name="K9100ii/android_frameworks_base" path="frameworks/base" remote="github" revision="lineage-19.1-ultralegacy" />
+
+  <!-- Contain patches needed since the kernel has no eBPF support - REQUIRED -->
+  <remove-project name="platform/system/bpf" />
+  <project name="K9100ii/android_system_bpf" path="system/bpf" remote="github" revision="android-12L" />
+  <remove-project name="LineageOS/android_system_netd" />
+  <project name="K9100ii/android_system_netd" path="system/netd" remote="github" revision="lineage-19.1" />
+
+  <!-- Contain further patches for restoring support for camera HAL v1 - REQUIRED -->
+  <remove-project name="LineageOS/android_system_core" />
+  <project name="K9100ii/android_system_core" path="system/core" remote="github" revision="lineage-19.1-ultralegacy" />
+  <remove-project name="LineageOS/android_frameworks_av" />
+  <project name="K9100ii/android_frameworks_av" path="frameworks/av" remote="github" revision="lineage-19.1-ultralegacy" />
+
+  <!-- Contains a patch for removing kernel version checking for memfd_create() support - REQUIRED -->
+  <remove-project name="platform/art" />
+  <project name="K9100ii/android_art" path="art" remote="github" revision="lineage-19.1-ultralegacy" />
+
+  <!-- Contains a compilation error fix - REQUIRED -->
+  <remove-project name="LineageOS/android_hardware_lineage_interfaces" />
+  <project name="K9100ii/android_hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="github" revision="lineage-19.1-ultralegacy" />
+
+  <!-- Contains a patch bringing back legacy FunctionFS support for ADB - REQUIRED -->
+  <remove-project name="LineageOS/android_packages_modules_adb" />
+  <project name="K9100ii/android_packages_modules_adb" path="packages/modules/adb" remote="github" revision="lineage-19.1-ultralegacy" />
+  <!-- END OF FORKS -->
+
+  <!-- Open source aptX and aptX HD encoders -->
+  <project name="K9100ii/android_external_aptxenc" path="external/aptxenc" remote="github" revision="android12L" />
+
+  <!-- Device trees -->
+  <project name="gta3xlwifi-dev/android_device_samsung_gta3xlwifi" path="device/samsung/gta3xlwifi" remote="github" revision="lineage" />
+  <!-- Vendor trees -->
+  <project name="gta3xlwifi-dev/proprietary_vendor_samsung_gta3xlwifi" path="vendor/samsung/gta3xlwifi" remote="github" revision="lineage" />
+
+  <!-- Linaro SLSI BSP sources -->
+  <project name="K9100ii/android_hardware_samsung_slsi-linaro_config" path="hardware/samsung_slsi-linaro/config" remote="github" revision="lineage-19.1" />
+  <project name="K9100ii/android_hardware_samsung_slsi-linaro_exynos" path="hardware/samsung_slsi-linaro/exynos" remote="github" revision="lineage-19.1" />
+  <project name="K9100ii/android_hardware_samsung_slsi-linaro_exynos5" path="hardware/samsung_slsi-linaro/exynos5" remote="github" revision="lineage-19.1" />
+  <project name="K9100ii/android_hardware_samsung_slsi-linaro_graphics" path="hardware/samsung_slsi-linaro/graphics" remote="github" revision="lineage-19.1" />
+  <project name="K9100ii/android_hardware_samsung_slsi-linaro_openmax" path="hardware/samsung_slsi-linaro/openmax" remote="github" revision="lineage-19.1" />
+  <project name="K9100ii/android_hardware_samsung_slsi-linaro_interfaces" path="hardware/samsung_slsi-linaro/interfaces" remote="github" revision="lineage-21" />
+  
+
+  <project name="LineageOS/android_device_samsung_slsi_sepolicy" path="device/samsung_slsi/sepolicy" remote="github" revision="lineage-21" />
+  <project name="LineageOS/android_hardware_samsung_slsi_libbt" path="hardware/samsung_slsi/libbt" remote="github" revision="lineage-19.1" />
+  <project name="LineageOS/android_hardware_samsung_slsi_scsc_wifibt_wpa_supplicant_lib" path="hardware/samsung_slsi/scsc_wifibt/wifi_supplicant_lib" remote="github" revision="lineage-19.1" />
+  <project name="LineageOS/android_hardware_samsung_slsi_scsc_wifibt_wpa_supplicant_lib" path="hardware/samsung_slsi/scsc_wifibt/wifi_hal" remote="github" revision="lineage-19.1" />
+  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-19.1" />
+  
+
+  <!-- AYanTreble -->
+  <project name="TrebleDroid/vendor_hardware_overlay" path="vendor/hardware_overlay" remote="github" revision="pie" />
+  <project name="TrebleDroid/device_phh_treble" path="device/phh/treble" remote="github" revision="android-13.0" />
+  <project name="phhusson/vendor_vndk-tests" path="vendor/vndk-tests" remote="github" revision="master" />
+  <project name="TrebleDroid/vendor_interfaces" path="vendor/interfaces" remote="github" revision="android-13.0" />
+  <project name="phhusson/vendor_lptools" path="vendor/lptools" remote="github" revision="master" />
+  <project name="phhusson/vendor_magisk" path="vendor/magisk" remote="github" revision="android-10.0" />
+  <project name="TrebleDroid/treble_app" path="treble_app" remote="github" revision="master" />
+  <remote name="gitlab" fetch="https://gitlab.com/" />
+  <project name="MindTheGapps/vendor_gapps" path="vendor/gapps" remote="gitlab" revision="tau" />
+  
+</manifest>
